@@ -1,0 +1,9 @@
+version: '3'
+services:
+    phaser:
+        build: ./node
+        volumes: 
+            - ../:/var/www/phaser
+        ports:
+            - 3000:3000
+
