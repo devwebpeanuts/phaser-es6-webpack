@@ -2,6 +2,7 @@ version: '3'
 services:
     phaser:
         build: ./node
+        user: ${USER_ID}:${GROUP_ID}
         volumes: 
             - ../:/var/www/phaser
         ports:

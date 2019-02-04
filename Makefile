@@ -15,10 +15,10 @@ endif
 npm = docker run --rm -v $$(pwd):/var/www/phaser -v ${HOME}/.npm:/.npm -v ${HOME}/.config:/.config -w /var/www/phaser -u ${USER_ID}:${GROUP_ID} node:11.9 npm $1
 
 up: install
-	docker-compose -f ./docker/docker-compose.yml up -d
+	USER_ID=${USER_ID} GROUP_ID=${GROUP_ID} docker-compose -f ./docker/docker-compose.yml up -d
 
 down:
-	docker-compose -f ./docker/docker-compose.yml down
+	USER_ID=${USER_ID} GROUP_ID=${GROUP_ID} docker-compose -f ./docker/docker-compose.yml down
 
 restart: down up
 
